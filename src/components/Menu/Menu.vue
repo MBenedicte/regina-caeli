@@ -1,5 +1,5 @@
 <template>
-    <header class="app-menu" :class="{ 'is-open': open }" role="banner">
+    <div class="app-menu" :class="{ 'is-open': open }" role="banner">
         <div class="menu-wrap" role="navigation" aria-label="Main">
             <a class="brand" href="#home" @click="close" aria-label="Go to Home">
                 <i class="ri-community-line" aria-hidden="true"></i>
@@ -28,7 +28,7 @@
             <a href="#about" @click="close"><i class="ri-information-line"></i> About Us</a>
             <a href="#contact" @click="close"><i class="ri-mail-line"></i> Contact Us</a>
         </nav>
-    </header>
+    </div>
 </template>
 
 <script src="./Menu.js"></script>

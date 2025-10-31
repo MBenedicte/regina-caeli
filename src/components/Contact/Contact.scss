@@ -1,0 +1,162 @@
+@use "@/assets/styles/variables" as *;
+$ring: #bfe0f7;
+
+.connect {
+  padding: 3rem 0;
+  scroll-margin-top: 90px;
+  background: linear-gradient(180deg, transparent, rgba($brand-2, 0.06));
+}
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.4rem, 1.2rem + 1.5vw, 2rem);
+  margin: 0 0 1rem;
+  i {
+    color: $brand;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 1fr; // form left, map right
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba($fg, 0.06);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.1rem 0 0.8rem;
+  i {
+    color: $brand;
+  }
+}
+
+.muted {
+  color: $muted;
+}
+
+/* ------ Contact form ------ */
+.contact {
+  display: grid;
+  gap: 0.75rem;
+
+  label {
+    font-weight: 700;
+    color: $fg;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba($fg, 0.12);
+    background: #fff;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(2, 6, 23, 0.02) inset;
+
+    &:focus {
+      border-color: $ring;
+      box-shadow: 0 0 0 4px rgba($ring, 0.45);
+    }
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    background: $brand;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: $brand-2;
+    }
+    &:focus {
+      outline: 3px solid $ring;
+      outline-offset: 2px;
+    }
+  }
+
+  .sent {
+    color: $brand;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+}
+
+/* ------ Visit right side ------ */
+.visit {
+  display: grid;
+  gap: 0.75rem;
+
+  .addr {
+    font-style: normal;
+    line-height: 1.5;
+    .muted {
+      display: block;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .map-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba($fg, 0.06);
+    background: rgba($bg, 0.7);
+  }
+
+  .map-frame {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .map-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+  }
+}

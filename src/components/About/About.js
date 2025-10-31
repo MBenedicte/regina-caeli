@@ -1,10 +1,8 @@
 export default {
-  name: "Footer",
+  name: "About",
 
   data: function () {
-    return {
-      open: false,
-    };
+    return {};
   },
   methods: {},
   mounted: async function () {},

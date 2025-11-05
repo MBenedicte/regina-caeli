@@ -149,3 +149,9 @@ $ring: #bfe0f7;
   white-space: nowrap;
   border: 0;
 }
+.links a.router-link-active,
+.drawer a.router-link-active {
+  color: $brand-300; // use your brand variable
+  font-weight: 600;
+  border-bottom: 2px solid $brand-300;
+}

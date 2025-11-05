@@ -6,7 +6,7 @@
       </h2>
 
       <div class="grid">
-        <form class="card contact" @submit.prevent="handleSubmit" novalidate>
+        <form class="card contact" action="https://formspree.io/f/xdkpqgeb" @submit.prevent="handleSubmit" novalidate>
           <h3 class="card-title"><i class="ri-mail-line"></i> Contact Us</h3>
 
           <label for="name">Name</label>
@@ -16,8 +16,7 @@
           <input id="email" v-model.trim="form.email" type="email" required autocomplete="email" />
 
           <label for="message">Message</label>
-          <textarea id="message" v-model.trim="form.message" required
-            placeholder="How can we serve you?"></textarea>
+          <textarea id="message" v-model.trim="form.message" required placeholder="How can we serve you?"></textarea>
 
           <div class="actions">
             <button class="btn" type="submit">
@@ -29,9 +28,12 @@
           </div>
         </form>
 
-       
+
         <article class="card visit">
-          <h3 class="card-title"><i class="ri-map-pin-line"></i> Visit Us</h3>
+          <h3 class="card-title"><i class="ri-map-pin-line"></i>Visit Us</h3>
+
+
+
 
           <address class="addr">
             <strong>Regina Caeli Catholic Community</strong><br />
@@ -41,14 +43,8 @@
           </address>
 
           <div class="map-wrap">
-            <iframe
-              class="map-frame"
-              :src="mapSrc"
-              style="border:0"
-              frameborder="0"
-              allowfullscreen
-              aria-label="Map to our church"
-            ></iframe>
+            <iframe class="map-frame" :src="mapSrc" style="border:0" frameborder="0" allowfullscreen
+              aria-label="Map to our church"></iframe>
           </div>
 
           <!-- Optional note for users about directions -->

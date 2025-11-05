@@ -1,24 +1,27 @@
-<script setup>
+<script>
 import Menu from './components/Menu/Menu.vue';
-import Carousel from './components/Carousel/Carousel.vue';
-import About from './components/About/About.vue';
-import ContactUs from './components/Contact/Contact.vue';
-import Mission from './components/Mission/Mission.vue';
 import Footer from './components/Footer/Footer.vue';
 
-
+export default {
+  name: "App",
+  components: {
+    Menu,
+    Footer,
+  },
+};
 </script>
 
 <template>
-  <div>
+  <div id="app">
     <Menu />
-    <Carousel :autoplayMs="6000" />
-    <About />
-    <Mission />
-    <ContactUs />
+    <main class="main-content">
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
+    </main>
     <Footer />
   </div>
 
 </template>
 
-<style scoped></style>
+<style scoped src="./App.scss" />

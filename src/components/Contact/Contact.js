@@ -2,6 +2,7 @@ export default {
   name: "ContactUs",
   data() {
     return {
+      submitted: false,
       sent: false,
       form: { name: "", email: "", message: "" },
       mapSrc:
@@ -9,11 +10,16 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
+    async handleSubmit(e) {
       // Minimal front-end validation
       if (!this.form.name || !this.form.email || !this.form.message) return;
 
-      // TODO: hook to your backend or service (e.g., Formspree / Cloud Function)
+      const response = await fetch("https://formspree.io/f/xdkpqgeb", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) this.submitted = true;
       // For now, just show a success message & clear the form
       this.sent = true;
       setTimeout(() => (this.sent = false), 4000);

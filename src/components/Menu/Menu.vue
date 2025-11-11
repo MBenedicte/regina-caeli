@@ -8,9 +8,9 @@
 
             <!-- Desktop links -->
             <nav class="links">
-                <a href="#home" @click="scrollTo('#home')">Home</a>
-                <a href="#about" @click="scrollTo('#about')">About Us</a>
-                <a href="#contact" @click="scrollTo('#contact')">Contact Us</a>
+                <a href="#home" @click="scrollTo('#home')">Hem</a>
+                <a href="#about" @click="scrollTo('#about')">Om Oss</a>
+                <a href="#contact" @click="scrollTo('#contact')">Kontakta Oss</a>
                 <!-- <router-link to="/facebook" @click="close">Facebook</router-link> -->
             </nav>
 
@@ -24,17 +24,14 @@
         <!-- Mobile drawer -->
         <nav class="drawer" v-show="open">
             <a href="#home" @click="scrollTo('#home')">
-                <i class="ri-home-5-line"></i> Home
+                <i class="ri-home-5-line"></i> Hem
             </a>
             <a href="#about" @click="scrollTo('#about')">
-                <i class="ri-information-line"></i> About Us
+                <i class="ri-information-line"></i> Om Oss
             </a>
             <a href="#contact" @click="scrollTo('#contact')">
-                <i class="ri-mail-line"></i> Contact Us
+                <i class="ri-mail-line"></i> Kontakta Oss
             </a>
-            <!-- <router-link to="/facebook" @click="close">
-                <i class="ri-facebook-circle-fill"></i> Facebook
-            </router-link> -->
         </nav>
     </div>
 </template>

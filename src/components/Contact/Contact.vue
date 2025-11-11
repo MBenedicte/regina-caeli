@@ -2,12 +2,13 @@
   <section id="contact" class="connect" aria-labelledby="connect-title">
     <div class="container">
       <h2 id="connect-title">
-        <i class="ri-hand-heart-line" aria-hidden="true"></i> Get in touch & Visit
+        <i class="ri-hand-heart-line" aria-hidden="true"></i> Kontakta oss
       </h2>
 
+      <!-- Contact + Visit Grid -->
       <div class="grid">
         <form class="card contact" action="https://formspree.io/f/xdkpqgeb" @submit.prevent="handleSubmit" novalidate>
-          <h3 class="card-title"><i class="ri-mail-line"></i> Contact Us</h3>
+          <h3 class="card-title"><i class="ri-mail-line"></i>Kontakta oss </h3>
 
           <label for="name">Name</label>
           <input id="name" v-model.trim="form.name" required autocomplete="name" />
@@ -28,18 +29,13 @@
           </div>
         </form>
 
-
         <article class="card visit">
-          <h3 class="card-title"><i class="ri-map-pin-line"></i>Visit Us</h3>
-
-
-
-
+          <h3 class="card-title"><i class="ri-map-pin-line"></i> Besök oss</h3>
           <address class="addr">
-            <strong>Regina Caeli Catholic Community</strong><br />
-            123 Hope Street<br />
-            Your City, Sweden<br />
-            <span class="muted">Sunday Worship: <b>10:00</b> &middot; Prayer: <b>Wed 19:00</b></span>
+            <strong>Regina Caeli Catholic Mission</strong><br />
+            Hyttgatan 5c<br />
+            Sala, Sweden<br />
+
           </address>
 
           <div class="map-wrap">
@@ -47,15 +43,51 @@
               aria-label="Map to our church"></iframe>
           </div>
 
-          <!-- Optional note for users about directions -->
           <div class="map-note muted">
             <i class="ri-external-link-line"></i>
             For directions, open the map and use your Maps app.
           </div>
         </article>
       </div>
+
+      <!-- Full-width subsection: Clergy Contacts -->
+      <article class="card clergy full-width">
+        <h3 class="card-title"><i class="ri-user-heart-line"></i> </h3>
+        <p class="intro">
+          Vi är välsignade att få vägledning av hängivna trons tjänare som leder vårt uppdrag med medkänsla och
+          ödmjukhet. Du uppmuntras att söka andlig vägledning eller församlingsfrågor.
+        </p>
+
+        <div class="clergy-grid">
+          <div class="clergy-member">
+            <h4>Fader Ignace Nkurunziza</h4>
+            <p><strong>Rektor</strong></p>
+            <address>
+              Hyttgatan 5c<br />
+              733 31 Sala<br />
+              <span class="muted">Mobiltel:</span> 076-240 89 95<br />
+              <span class="muted">E-post:</span>
+              <a href="mailto:ignacenku@yahoo.fr">ignacenku@yahoo.fr</a>
+            </address>
+          </div>
+
+          <div class="clergy-member">
+            <h4>Diakon Godefroid Ndayikengurukiye</h4>
+            <p><strong>Diakon</strong></p>
+            <address>
+              Enstigen 5<br />
+              745 71 Enköping<br />
+              <span class="muted">E-post:</span>
+              <a href="mailto:godefroid.ndayikengurukiye@katolskakyrkan.se">
+                godefroid.ndayikengurukiye@katolskakyrkan.se
+              </a>
+            </address>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
+
 </template>
 
 <script src="./Contact.js" />

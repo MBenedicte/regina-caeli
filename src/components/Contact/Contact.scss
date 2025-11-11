@@ -28,6 +28,7 @@ h2 {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1.2fr 1fr; // form left, map right
+  margin-bottom: 2rem;
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
   }
@@ -158,5 +159,66 @@ h2 {
     align-items: center;
     gap: 0.4rem;
     font-size: 0.95rem;
+  }
+}
+
+/* ------ Clergy Section (Full Width) ------ */
+.clergy {
+  grid-column: 1 / -1; // spans entire width below grid
+  background: #fff;
+  border: 1px solid rgba($fg, 0.06);
+  border-radius: 14px;
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+  .card-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .intro {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: $muted;
+    max-width: 800px;
+  }
+
+  .clergy-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .clergy-member {
+    background: rgba($bg, 0.3);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h4 {
+      margin-bottom: 0.3rem;
+      color: $fg;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.6;
+      margin-top: 0.4rem;
+    }
+
+    a {
+      color: $brand;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

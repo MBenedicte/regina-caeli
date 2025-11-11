@@ -2,8 +2,16 @@ export default {
   name: "About",
 
   data: function () {
-    return {};
+    return {
+      showMore: false,
+    };
   },
-  methods: {},
+
+  methods: {
+    toggleMore() {
+      this.showMore = !this.showMore;
+    },
+  },
+
   mounted: async function () {},
 };

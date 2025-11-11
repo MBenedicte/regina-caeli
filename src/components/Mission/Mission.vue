@@ -12,16 +12,17 @@
                 <!-- Right: mission text -->
                 <div class="text">
                     <h2 id="mission-title">
-                        <i class="ri-fire-line" aria-hidden="true"></i> Our Mission
+                        <i class="ri-fire-line" aria-hidden="true"></i> Vårt uppdrag
                     </h2>
                     <p>
-                        We exist to glorify God by making disciples of Jesus Christ
-                        through gospel-centered worship, community, and mission.
+                        Den katolska visionen för mänskligheten är att skapa Guds avbild i troende människor, samtidigt
+                        som man försöker följa och omsätta Guds ord i praktiken eftersom Gud är kärlek.
+                        Burundiska och rwandiska missionen tillhör Stockholms katolska och omfattar katolska människor
+                        som pratar kirundi och kinyarwanda språk i hela Sverige.
+
                     </p>
                     <p>
-                        Our heart is to be a home where everyone can encounter God’s love,
-                        grow in faith, and serve others. Together we seek to bring light,
-                        hope, and restoration to our city and beyond.
+                        Burundiska och rwandiska mission bildades den xx-xx-xxxx och har idag sitt huvudkontor i Sala
                     </p>
                 </div>
             </div>

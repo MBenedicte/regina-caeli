@@ -10,7 +10,7 @@
 
         <!-- Caption Overlay -->
         <div class="caption">
-            <h2 class="caption-text">A place to grow in Faith and community</h2>
+            <h2 class="caption-text">Välkommen till <br>“Burundiska och rwandiska mission”.</h2>
             <button class="btn" @click="openModal">
                 <i class="ri-calendar-line"></i> Check our calendar
             </button>

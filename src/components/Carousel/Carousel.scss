@@ -1,27 +1,23 @@
-@use "@/assets/styles/variables" as *; // brings $brand, $brand-2, $bg, $fg, $ring, etc.
-$ring: #bfe0f7;
-/* Layout */
+@use "@/assets/styles/variables" as *;
+
 .app-carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* keep it visible below fixed menu */
-  margin-top: 0px;
+  aspect-ratio: 16/7;
 
-  /* height control */
-  aspect-ratio: 16 / 7; /* big screens */
   @media (max-width: 1024px) {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16/9;
   }
   @media (max-width: 640px) {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
   }
   figure {
-    margin: 0px;
-    margin-top: 1rem;
+    margin: 0 !important; // remove bad margin
   }
 }
 
+/* Slide Track */
 .track {
   display: flex;
   width: 100%;
@@ -39,69 +35,69 @@ $ring: #bfe0f7;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.65); // slightly gentler darkening
+    transform: scale(1.03);
+    transition: transform 0.6s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    filter: brightness(0.55); /* darken pictures */
-    transform: scale(1.02);
   }
 
-  /* soft vignette for readability */
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  /* subtle vignette — softer & more elegant */
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(120% 100% at 80% 0%, rgba(0, 0, 0, 0.25), transparent 60%);
+    background: radial-gradient(120% 100% at 80% 0%, rgba(0, 0, 0, 0.22), transparent 60%);
     pointer-events: none;
   }
 }
 
-/* Left overlay (Google Calendar) */
-.overlay {
+/* Caption */
+.caption {
   position: absolute;
-  inset: 0 auto 0 0; /* top/bottom/left pinned */
-  width: min(420px, 42vw);
-  display: grid;
-  align-items: center;
-  padding: 1rem;
-  pointer-events: none; /* let clicks pass except the card */
-}
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  color: #fff;
 
-.overlay-card {
-  pointer-events: auto;
-  background: rgba($bg, 0.85);
-  backdrop-filter: saturate(180%) blur(8px);
-  border: 1px solid rgba($fg, 0.08);
-  border-left: 6px solid $brand;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  padding: 0.75rem;
-}
-
-.overlay-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 800;
-  color: $brand;
-  margin-bottom: 0.4rem;
-
-  i {
-    font-size: 1.25rem;
+  .caption-text {
+    font-size: clamp(1.4rem, 1.1rem + 1.6vw, 2.4rem);
+    margin-bottom: 1.2rem;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
+    font-weight: 400; // light, no bold
+    color: #fff;
+    font-style: normal !important;
   }
-}
 
-.calendar-wrap {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: rgba($bg, 0.7);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba($fg, 0.06);
-}
+  .caption-text span {
+    font-style: italic !important;
+  }
 
-.calendar-frame {
-  width: 100%;
-  height: 100%;
-  display: block;
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 5px;
+    background-image: linear-gradient(135deg, rgba($brand-2, 0.85), rgba($brand, 0.9));
+    border: 1px solid rgba(#ffffff, 0.3);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
 }
 
 /* Controls */
@@ -110,110 +106,53 @@ $ring: #bfe0f7;
   top: 50%;
   transform: translateY(-50%);
   border: 0;
-  border-radius: 10px;
-  padding: 0.55rem 0.6rem;
-  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  padding: 0.4rem 0.55rem;
+  background: rgba(0, 0, 0, 0.33);
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition: background 160ms ease;
+  transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  &:focus {
-    outline: 3px solid $ring;
-    outline-offset: 2px;
+    background: rgba(0, 0, 0, 0.48);
   }
 }
+
 .prev {
-  left: 0.5rem;
+  left: 0.6rem;
 }
 .next {
-  right: 0.5rem;
+  right: 0.6rem;
 }
 
 /* Dots */
 .dots {
   position: absolute;
-  bottom: 0.6rem;
+  bottom: 1rem;
   left: 50%;
-  transform: translateX(-50%);
+  gap: 0.38rem;
   display: flex;
-  gap: 0.35rem;
+  transform: translateX(-50%);
 }
+
 .dot {
   width: 10px;
   height: 10px;
-  border-radius: 999px;
+  border-radius: 50%;
   border: 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(175, 173, 173, 0.415);
   cursor: pointer;
+
   &.active {
     background: $brand;
   }
-  &:focus {
-    outline: 3px solid $ring;
-    outline-offset: 2px;
-  }
 }
 
-/* Responsive: move overlay below on small screens */
-@media (max-width: 900px) {
-  .overlay {
-    inset: auto 0 0 0;
-    width: 100%;
-    padding: 0.6rem;
-  }
-  .overlay-card {
-    border-left-width: 4px;
-  }
-}
-
-.caption {
-  position: absolute;
-  bottom: 8.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #fff;
-  z-index: 3;
-
-  .caption-text {
-    font-size: clamp(1.2rem, 1rem + 1.2vw, 2rem);
-    margin-bottom: 0.75rem;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    font-weight: 700;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: $brand;
-    color: #fff;
-    font-weight: 700;
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    border: 0;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-
-    &:hover {
-      background: $brand-2;
-    }
-    &:focus {
-      outline: 3px solid $ring;
-      outline-offset: 2px;
-    }
-  }
-}
-
-/* ----- Modal overlay & content ----- */
+/* Modal */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(17, 24, 39, 0.6);
   display: grid;
   place-items: center;
   z-index: 999;
@@ -221,9 +160,10 @@ $ring: #bfe0f7;
 
 .modal-content {
   background: #fff;
-  width: min(90%, 900px);
-  max-height: 85vh;
-  border-radius: 14px;
+  width: min(95%, 980px);
+  height: 90vh; // bigger, consistent
+  max-height: 100vh; // allow full screen if needed
+  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -231,19 +171,22 @@ $ring: #bfe0f7;
   animation: fadeInUp 0.3s ease;
 }
 
+/* Modal Header */
 .modal-header {
+  background-image: linear-gradient(135deg, rgba($brand, 0.8), rgba($brand-2, 0.8));
+  color: #fff;
+  padding: 0.7rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: $brand;
-  color: #fff;
-  padding: 0.8rem 1rem;
 
   h3 {
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
+    font-weight: 400; // NO BOLD
+    color: #fff;
   }
 }
 
@@ -255,13 +198,13 @@ $ring: #bfe0f7;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 }
 
 .calendar-wrap {
   flex: 1;
-  background: rgba($bg, 0.8);
+  background: rgba($bg, 0.55);
 }
 
 .calendar-frame {
@@ -270,6 +213,7 @@ $ring: #bfe0f7;
   border: 0;
 }
 
+/* Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -1,9 +1,10 @@
 .home {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  margin-top: -2rem;
+  gap: 0; /* Let each section handle its own spacing */
 }
+
+/* Prevent menu overlap on anchor scroll */
 section {
-  scroll-margin-top: 10px; // prevents navbar overlap
+  scroll-margin-top: 90px;
 }

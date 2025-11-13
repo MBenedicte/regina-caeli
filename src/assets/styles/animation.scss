@@ -14,3 +14,19 @@
   opacity: 0;
   animation: fade-up-init forwards 2s;
 }
+@keyframes fade-up-init {
+  from {
+    transform: translate3d(0px, 40px, 0px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+.anim-0 {
+  opacity: 0;
+  animation: fade-up-init forwards 2s;
+}

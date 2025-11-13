@@ -1,25 +1,20 @@
 <template>
     <div class="home">
+
         <!-- Hero / Carousel -->
-        <section id="home">
-            <Carousel />
-        </section>
+        <Carousel />
 
-        <!-- Mission / About -->
-        <section id="about">
-            <About />
-            <Mission />
-        </section>
+        <!-- About -->
+        <About />
 
-        <!-- Contact + Visit Us -->
-        <section id="contact">
-            <Contact />
-        </section>
+        <!-- Mission -->
+        <Mission />
+
+        <!-- Contact -->
+        <Contact />
+
     </div>
 </template>
 
-
-
-
-<script lang="js" src="./Home.js" />
-<style scoped src="./Home.scss" />
+<script src="./Home.js"></script>
+<style lang="scss" src="./Home.scss" scoped></style>

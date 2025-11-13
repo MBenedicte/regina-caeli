@@ -1,11 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home/Home.vue";
-import Facebook from "../components/Facebook/Facebook.vue";
 
-const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/facebook", name: "Facebook", component: Facebook },
-];
+const routes = [{ path: "/", name: "Home", component: Home }];
 
 const router = createRouter({
   history: createWebHistory(),

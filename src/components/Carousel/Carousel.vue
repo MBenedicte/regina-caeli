@@ -8,20 +8,24 @@
             </figure>
         </div>
 
-        <!-- Caption Overlay -->
+        <!-- Caption -->
         <div class="caption">
-            <h2 class="caption-text">Välkommen till <br>“Burundiska och rwandiska mission”.</h2>
-            <button class="btn" @click="openModal">
-                <i class="ri-calendar-line"></i> Check our calendar
+            <h2 class="caption-text">
+                Välkommen till <br />
+                <span>“Burundiska och rwandiska mission”.</span>
+            </h2>
+            <button class="cta-btn" @click="openModal">
+                <i class="ri-calendar-line"></i>
+                Se kalendern
             </button>
         </div>
 
         <!-- Controls -->
         <button class="ctrl prev" @click="prev" aria-label="Previous slide">
-            <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
+            <i class="ri-arrow-left-s-line"></i>
         </button>
         <button class="ctrl next" @click="next" aria-label="Next slide">
-            <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+            <i class="ri-arrow-right-s-line"></i>
         </button>
 
         <!-- Dots -->
@@ -30,12 +34,13 @@
                 :aria-selected="current === i ? 'true' : 'false'" role="tab"></button>
         </div>
 
-        <!-- Modal -->
+        <!-- MODAL -->
         <div class="modal" v-if="showModal" @click.self="closeModal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h3><i class="ri-calendar-2-line"></i> Church Events</h3>
-                    <button class="close-btn" @click="closeModal" aria-label="Close">
+                    <h3><i class="ri-calendar-2-line"></i> Kyrkans evenemang</h3>
+
+                    <button class="close-btn" @click="closeModal">
                         <i class="ri-close-line"></i>
                     </button>
                 </header>
@@ -43,8 +48,7 @@
                 <div class="calendar-wrap">
                     <iframe
                         src="https://calendar.google.com/calendar/embed?src=burundiskakatolskamission@gmail.com&mode=WEEK&showPrint=0&showTabs=0&showTz=0&wkst=2&bgcolor=%23ffffff"
-                        class="calendar-frame" frameborder="0" scrolling="no" allowfullscreen
-                        aria-label="Calendar of events"></iframe>
+                        class="calendar-frame" frameborder="0" scrolling="no" aria-label="Kyrkans kalender"></iframe>
                 </div>
             </div>
         </div>

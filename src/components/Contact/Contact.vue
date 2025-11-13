@@ -1,71 +1,80 @@
 <template>
-  <section id="contact" class="connect" aria-labelledby="connect-title">
+  <section id="contact" class="contact-section" aria-labelledby="contact-title">
     <div class="container">
-      <h2 id="connect-title">
-        <i class="ri-hand-heart-line" aria-hidden="true"></i> Kontakta oss
-      </h2>
 
-      <!-- Contact + Visit Grid -->
-      <div class="grid">
-        <form class="card contact" action="https://formspree.io/f/xdkpqgeb" @submit.prevent="handleSubmit" novalidate>
-          <h3 class="card-title"><i class="ri-mail-line"></i>Kontakta oss </h3>
+      <!-- Header -->
+      <div class="section-header">
+        <h2 id="contact-title">Kontakta oss</h2>
+        <div class="divider"></div>
+      </div>
 
-          <label for="name">Name</label>
-          <input id="name" v-model.trim="form.name" required autocomplete="name" />
+      <!-- Contact + Visit -->
+      <div class="contact-grid">
+        <!-- CONTACT FORM -->
+        <form class="card contact-form" action="https://formspree.io/f/xdkpqgeb" @submit.prevent="handleSubmit"
+          ref="contactForm" novalidate>
+          <h3><i class="ri-mail-line"></i> Kontakta oss</h3>
 
-          <label for="email">Email</label>
-          <input id="email" v-model.trim="form.email" type="email" required autocomplete="email" />
+          <label for="name">Namn</label>
+          <input id="name" v-model.trim="form.name" name="name" required />
 
-          <label for="message">Message</label>
-          <textarea id="message" v-model.trim="form.message" required placeholder="How can we serve you?"></textarea>
+          <label for="email">E-post</label>
+          <input id="email" v-model.trim="form.email" type="email" name="email" required />
+
+          <label for="message">Meddelande</label>
+          <textarea id="message" v-model.trim="form.message" name="message" required
+            placeholder="Vad kan vi hjälpa dig med?"></textarea>
 
           <div class="actions">
-            <button class="btn" type="submit">
-              <i class="ri-send-plane-2-line" aria-hidden="true"></i> Send Message
+            <button class="btn btn--primary" type="submit">
+              <i class="ri-send-plane-2-line"></i>
+              Skicka meddelande
             </button>
+
             <p v-if="sent" class="sent">
-              <i class="ri-check-line"></i> Thanks! We’ll get back to you.
+              <i class="ri-check-line"></i> Tack! Vi återkommer snart.
             </p>
           </div>
         </form>
 
-        <article class="card visit">
-          <h3 class="card-title"><i class="ri-map-pin-line"></i> Besök oss</h3>
-          <address class="addr">
-            <strong>Regina Caeli Catholic Mission</strong><br />
-            Hyttgatan 5c<br />
-            Sala, Sweden<br />
+        <!-- VISIT US -->
+        <article class="card visit-card">
+          <h3><i class="ri-map-pin-line"></i> Besök oss</h3>
 
+          <address class="addr">
+            Regina Caeli Catholic Mission <br />
+            Hyttgatan 5c <br />
+            Sala, Sweden
           </address>
 
-          <div class="map-wrap">
-            <iframe class="map-frame" :src="mapSrc" style="border:0" frameborder="0" allowfullscreen
-              aria-label="Map to our church"></iframe>
-          </div>
 
-          <div class="map-note muted">
+          <div class="map-wrap">
+            <iframe class="map-frame" :src="mapSrc"></iframe>
+          </div>
+          <div class="map-note">
             <i class="ri-external-link-line"></i>
-            For directions, open the map and use your Maps app.
+            Öppna kartan för vägledning.
           </div>
         </article>
       </div>
 
-      <!-- Full-width subsection: Clergy Contacts -->
-      <article class="card clergy full-width">
-        <h3 class="card-title"><i class="ri-user-heart-line"></i> </h3>
+      <!-- CLERGY -->
+      <article class="card clergy-card">
+        <h3 class="personal-title">Andlig Vägledning & Tjänare i Missionen</h3>
+
         <p class="intro">
-          Vi är välsignade att få vägledning av hängivna trons tjänare som leder vårt uppdrag med medkänsla och
-          ödmjukhet. Du uppmuntras att söka andlig vägledning eller församlingsfrågor.
+          Vi är välsignade med hängivna tjänare som leder missionen med kärlek
+          och ödmjukhet. Du är varmt välkommen att söka andlig vägledning.
         </p>
 
         <div class="clergy-grid">
           <div class="clergy-member">
             <h4>Fader Ignace Nkurunziza</h4>
-            <p><strong>Rektor</strong></p>
+            <p>Rektor</p>
             <address>
-              Hyttgatan 5c<br />
-              733 31 Sala<br />
-              <span class="muted">Mobiltel:</span> 076-240 89 95<br />
+              Hyttgatan 5c <br />
+              733 31 Sala <br />
+              <span class="muted">Mobiltel:</span> 076-240 89 95 <br />
               <span class="muted">E-post:</span>
               <a href="mailto:ignacenku@yahoo.fr">ignacenku@yahoo.fr</a>
             </address>
@@ -73,10 +82,10 @@
 
           <div class="clergy-member">
             <h4>Diakon Godefroid Ndayikengurukiye</h4>
-            <p><strong>Diakon</strong></p>
+            <p>Diakon</p>
             <address>
-              Enstigen 5<br />
-              745 71 Enköping<br />
+              Enstigen 5 <br />
+              745 71 Enköping <br />
               <span class="muted">E-post:</span>
               <a href="mailto:godefroid.ndayikengurukiye@katolskakyrkan.se">
                 godefroid.ndayikengurukiye@katolskakyrkan.se
@@ -85,11 +94,11 @@
           </div>
         </div>
       </article>
+
     </div>
   </section>
-
 </template>
 
-<script src="./Contact.js" />
+<script src="./Contact.js"></script>
 
 <style lang="scss" src="./Contact.scss" scoped></style>

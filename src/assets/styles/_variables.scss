@@ -1,19 +1,19 @@
-// Blue brand system
-$brand-900: #0b3a6a; // deep navy
-$brand-800: #124a84;
-$brand-700: #155e9a;
-$brand-600: #1b75b6; // primary
-$brand-500: #2f8fd3;
-$brand-400: #5aa8e2;
-$brand-300: #8cc3ee;
-$brand-200: #bfe0f7;
-$brand-100: #e6f3fd;
+$brand: #214c8f; // primary deep blue
+$brand-2: #4f7dc9; // lighter companion blue
+$brand-300: #88aee9; // softer accent blue
 
-$brand:   $brand-600; // main action color
-$brand-2: $brand-400; // secondary/hover
+// Neutrals
+$bg: #f6f8fc; // very light blue-grey for backgrounds
+$fg: #1f2933; // deep grey-blue for text
 
-$bg:    #f7fbff; // very light blue background
-$fg:    #0f172a; // slate-like text
-$muted: #49627a; // cool gray for secondary text
+// Supporting colours
+$border-soft: rgba(0, 0, 0, 0.06);
+$shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
 
-$radius: 14px;
+// Semantic
+$danger: #b91c1c;
+$success: #166534;
+
+// Gradients (subtle, not flashy)
+$grad-soft: linear-gradient(135deg, rgba($brand, 0.08), rgba($brand-2, 0.12));
+$grad-strong: linear-gradient(135deg, $brand-2, $brand);

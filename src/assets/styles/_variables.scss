@@ -1,0 +1,19 @@
+$brand: #214c8f; // primary deep blue
+$brand-2: #4f7dc9; // lighter companion blue
+$brand-300: #88aee9; // softer accent blue
+
+// Neutrals
+$bg: #f6f8fc; // very light blue-grey for backgrounds
+$fg: #1f2933; // deep grey-blue for text
+
+// Supporting colours
+$border-soft: rgba(0, 0, 0, 0.06);
+$shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+// Semantic
+$danger: #b91c1c;
+$success: #166534;
+
+// Gradients (subtle, not flashy)
+$grad-soft: linear-gradient(135deg, rgba($brand, 0.08), rgba($brand-2, 0.12));
+$grad-strong: linear-gradient(135deg, $brand-2, $brand);

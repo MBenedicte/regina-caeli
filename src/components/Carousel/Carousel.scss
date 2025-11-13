@@ -1,0 +1,226 @@
+@use "@/assets/styles/variables" as *;
+
+.app-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16/7;
+
+  @media (max-width: 1024px) {
+    aspect-ratio: 16/9;
+  }
+  @media (max-width: 640px) {
+    aspect-ratio: 1/1;
+  }
+  figure {
+    margin: 0 !important; // remove bad margin
+  }
+}
+
+/* Slide Track */
+.track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 500ms ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65); // slightly gentler darkening
+    transform: scale(1.03);
+    transition: transform 0.6s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  /* subtle vignette — softer & more elegant */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 100% at 80% 0%, rgba(0, 0, 0, 0.22), transparent 60%);
+    pointer-events: none;
+  }
+}
+
+/* Caption */
+.caption {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  color: #fff;
+
+  .caption-text {
+    font-size: clamp(1.4rem, 1.1rem + 1.6vw, 2.4rem);
+    margin-bottom: 1.2rem;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
+    font-weight: 400; // light, no bold
+    color: #fff;
+    font-style: normal !important;
+  }
+
+  .caption-text span {
+    font-style: italic !important;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 5px;
+    background-image: linear-gradient(135deg, rgba($brand-2, 0.85), rgba($brand, 0.9));
+    border: 1px solid rgba(#ffffff, 0.3);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+/* Controls */
+.ctrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 4px;
+  padding: 0.4rem 0.55rem;
+  background: rgba(0, 0, 0, 0.33);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.48);
+  }
+}
+
+.prev {
+  left: 0.6rem;
+}
+.next {
+  right: 0.6rem;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  gap: 0.38rem;
+  display: flex;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(175, 173, 173, 0.415);
+  cursor: pointer;
+
+  &.active {
+    background: $brand;
+  }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  width: min(95%, 980px);
+  height: 90vh; // bigger, consistent
+  max-height: 100vh; // allow full screen if needed
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Modal Header */
+.modal-header {
+  background-image: linear-gradient(135deg, rgba($brand, 0.8), rgba($brand-2, 0.8));
+  color: #fff;
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 400; // NO BOLD
+    color: #fff;
+  }
+}
+
+.close-btn {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.calendar-wrap {
+  flex: 1;
+  background: rgba($bg, 0.55);
+}
+
+.calendar-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

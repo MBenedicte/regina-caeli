@@ -1,0 +1,130 @@
+// src/components/Menu/Menu.scss
+@use "@/assets/styles/variables" as *;
+
+$hover-bg: rgba($brand-300, 0.18);
+$ring: #bfe0f7;
+
+.app-menu {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(#ffffff, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($fg, 0.06);
+
+  .menu-wrap {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 0.75rem 1.25rem; /* increased slightly for balance */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    a {
+      span {
+        margin-left: 0.1rem;
+        font-style: italic;
+      }
+    }
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: $brand; // text color from brand
+    font-weight: 800;
+
+    i {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: linear-gradient(135deg, $brand-2, $brand-300);
+      color: #fff;
+      font-size: 1.15rem;
+    }
+  }
+
+  .links {
+    display: none;
+    gap: 0.4rem;
+
+    a {
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: $fg;
+
+      &:hover,
+      &:focus {
+        background: $hover-bg;
+        outline: none;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0.45rem 0.7rem;
+    border-radius: 4px;
+    background-image: $grad-soft;
+    color: #ffffff;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    &:focus {
+      outline: 2px solid $ring;
+      outline-offset: 2px;
+    }
+  }
+
+  .drawer {
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.4rem 0.6rem 0.6rem;
+    background: rgba(#ffffff, 0.98);
+    border-bottom: 1px solid rgba($fg, 0.06);
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.5rem;
+      border-radius: 4px;
+      color: $fg;
+
+      i {
+        color: $brand;
+      }
+
+      &:hover,
+      &:focus {
+        background: $hover-bg;
+        outline: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-menu {
+    .links {
+      display: flex;
+    }
+    .menu-toggle {
+      display: none;
+    }
+    .drawer {
+      display: none !important;
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@use "@/assets/styles/variables" as *;
+
+.contact-section {
+  background: #ffffff;
+}
+
+/* Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  .header-icon {
+    font-size: 2.2rem;
+    color: $brand;
+    margin-bottom: 0.3rem;
+  }
+
+  h2 {
+    margin-bottom: 0.4rem;
+  }
+
+  .divider {
+    width: 55px;
+    height: 2px;
+    background: $grad-soft;
+    margin: 0.5rem auto 0;
+  }
+}
+
+/* Contact + Visit Grid */
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card base (aligned with global rules) */
+.card {
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba($fg, 0.06);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      color: $brand;
+    }
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+
+  label {
+    color: $fg;
+    font-style: italic; /* no bold */
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid rgba($fg, 0.12);
+    border-radius: 4px;
+    background: #fff;
+    font-style: italic;
+
+    &:focus {
+      outline: 2px solid rgba($brand-2, 0.45);
+      border-color: $brand-2;
+    }
+  }
+
+  textarea {
+    min-height: 130px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn--primary {
+    background-image: $grad-strong;
+    border-radius: 4px;
+  }
+
+  .sent {
+    color: $brand;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+/* Visit us */
+.visit-card {
+  .addr {
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .map-note {
+    font-size: 0.95rem;
+    color: $fg;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .map-wrap {
+    width: 100%;
+    height: clamp(220px, 28vw, 350px); // responsive auto-height
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba($fg, 0.08);
+    background: rgba($bg, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .map-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.personal-title {
+  margin-bottom: 1.5rem;
+  color: $brand;
+  font-size: 1.4rem;
+}
+
+/* Clergy */
+.clergy-card {
+  margin-top: 2rem;
+
+  .intro {
+    max-width: 830px;
+    margin-bottom: 2rem;
+    color: rgba($fg, 0.7);
+  }
+
+  .clergy-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .clergy-member {
+    background: rgba($brand-300, 0.08);
+    padding: 1.2rem;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    address {
+      margin-top: 0.4rem;
+      line-height: 1.55;
+
+      a {
+        color: $brand;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

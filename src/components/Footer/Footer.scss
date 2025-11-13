@@ -1,0 +1,63 @@
+@use "@/assets/styles/variables" as *;
+
+/* Calm Catholic footer */
+.app-footer {
+  background: linear-gradient(135deg, rgba($brand, 0.08), rgba($brand-2, 0.12));
+  color: rgba($fg, 0.85);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  margin-top: 3rem;
+
+  .footer-content {
+    max-width: 1100px;
+  }
+
+  /* Facebook link row */
+  .footer-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-style: italic;
+
+    i {
+      font-size: 1.35rem;
+      color: $brand;
+    }
+
+    .link {
+      color: $brand;
+      text-decoration: none;
+      font-style: italic;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $brand-2;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* Brand name */
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    font-size: 1.05rem;
+    color: rgba($fg, 0.9);
+    font-style: italic; // no bold
+
+    i {
+      font-size: 1.25rem;
+      color: $brand-300;
+    }
+  }
+
+  /* Copyright */
+  .copy {
+    font-size: 0.9rem;
+    color: rgba($fg, 0.7);
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+}

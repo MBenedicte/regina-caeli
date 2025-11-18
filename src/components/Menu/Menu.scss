@@ -33,21 +33,22 @@ $ring: #bfe0f7;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    color: $brand; // text color from brand
+    color: $brand;
     font-weight: 800;
 
-    i {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: linear-gradient(135deg, $brand-2, $brand-300);
-      color: #fff;
-      font-size: 1.15rem;
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    span {
+      margin-left: 0.1rem;
+      font-style: italic;
+      font-size: 1.05rem;
     }
   }
-
   .links {
     display: none;
     gap: 0.4rem;

@@ -10,6 +10,7 @@
 
       <!-- Contact + Visit -->
       <div class="contact-grid">
+
         <!-- CONTACT FORM -->
         <form class="card contact-form" action="https://formspree.io/f/xdkpqgeb" @submit.prevent="handleSubmit"
           ref="contactForm" novalidate>
@@ -25,14 +26,22 @@
           <textarea id="message" v-model.trim="form.message" name="message" required
             placeholder="Vad kan vi hjälpa dig med?"></textarea>
 
+          <!-- reCAPTCHA -->
+          <input type="hidden" name="g-recaptcha-response" :value="recaptchaToken" />
+
           <div class="actions">
-            <button class="btn btn--primary" type="submit">
+            <button class="btn btn--primary" type="submit" :disabled="loading">
               <i class="ri-send-plane-2-line"></i>
-              Skicka meddelande
+              <span v-if="!loading">Skicka meddelande</span>
+              <span v-else>Skickar...</span>
             </button>
 
             <p v-if="sent" class="sent">
               <i class="ri-check-line"></i> Tack! Vi återkommer snart.
+            </p>
+
+            <p v-if="error" class="error">
+              <i class="ri-error-warning-line"></i> Något gick fel. Försök igen.
             </p>
           </div>
         </form>
@@ -43,14 +52,14 @@
 
           <address class="addr">
             Regina Caeli Catholic Mission <br />
-            Hyttgatan 5c <br />
+            Hyttgatan 5A<br />
             Sala, Sweden
           </address>
-
 
           <div class="map-wrap">
             <iframe class="map-frame" :src="mapSrc"></iframe>
           </div>
+
           <div class="map-note">
             <i class="ri-external-link-line"></i>
             Öppna kartan för vägledning.
@@ -68,28 +77,24 @@
         </p>
 
         <div class="clergy-grid">
-          <div class="clergy-member">
-            <h4>Fader Ignace Nkurunziza</h4>
-            <p>Rektor</p>
-            <address>
-              Hyttgatan 5c <br />
-              733 31 Sala <br />
-              <span class="muted">Mobiltel:</span> 076-240 89 95 <br />
-              <span class="muted">E-post:</span>
-              <a href="mailto:ignacenku@yahoo.fr">ignacenku@yahoo.fr</a>
-            </address>
-          </div>
+          <div class="clergy-member" v-for="(person, index) in clergy" :key="index">
+            <h4>{{ person.name }}</h4>
 
-          <div class="clergy-member">
-            <h4>Diakon Godefroid Ndayikengurukiye</h4>
-            <p>Diakon</p>
             <address>
-              Enstigen 5 <br />
-              745 71 Enköping <br />
-              <span class="muted">E-post:</span>
-              <a href="mailto:godefroid.ndayikengurukiye@katolskakyrkan.se">
-                godefroid.ndayikengurukiye@katolskakyrkan.se
-              </a>
+              <p class="row" v-if="person.address">
+                <i class="ri-map-pin-line"></i>
+                {{ person.address }}
+              </p>
+
+              <p class="row" v-if="person.phone">
+                <i class="ri-phone-line"></i>
+                {{ person.phone }}
+              </p>
+
+              <p class="row" v-if="person.email">
+                <i class="ri-mail-line"></i>
+                <a :href="`mailto:${person.email}`">{{ person.email }}</a>
+              </p>
             </address>
           </div>
         </div>

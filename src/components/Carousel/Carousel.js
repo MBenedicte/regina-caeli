@@ -6,7 +6,6 @@ export default {
       images: [
         new URL("@/assets/images/img1.jpg", import.meta.url).href,
         new URL("@/assets/images/img2.jpg", import.meta.url).href,
-        new URL("@/assets/images/img3.jpg", import.meta.url).href,
       ],
       current: 0,
       showModal: false,

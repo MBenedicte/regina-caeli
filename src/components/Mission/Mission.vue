@@ -20,11 +20,10 @@
                         som man försöker följa och omsätta Guds ord i praktiken eftersom Gud är kärlek.
                         Burundiska och rwandiska missionen tillhör Stockholms katolska och omfattar katolska människor
                         som pratar kirundi och kinyarwanda språk i hela Sverige.
-
                     </p>
 
                     <p>
-                        Burundiska och rwandiska mission bildades den xx-xx-xxxx och har idag sitt huvudkontor i Sala
+                       Burundiska och rwandiska katolska mission förklarades 2020-06-01 av Kardinal Anders Arborelius och har sitt säte i Sala
                     </p>
                 </div>
 

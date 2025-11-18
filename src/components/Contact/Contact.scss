@@ -9,12 +9,6 @@
   text-align: center;
   margin-bottom: 2.5rem;
 
-  .header-icon {
-    font-size: 2.2rem;
-    color: $brand;
-    margin-bottom: 0.3rem;
-  }
-
   h2 {
     margin-bottom: 0.4rem;
   }
@@ -38,7 +32,7 @@
   }
 }
 
-/* Card base (aligned with global rules) */
+/* Cards */
 .card {
   background: #fff;
   padding: 1.6rem;
@@ -47,11 +41,10 @@
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
 
   h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 1rem;
 
     i {
       color: $brand;
@@ -66,7 +59,7 @@
 
   label {
     color: $fg;
-    font-style: italic; /* no bold */
+    font-style: italic;
   }
 
   input,
@@ -94,39 +87,32 @@
     gap: 0.75rem;
   }
 
-  .btn--primary {
-    background-image: $grad-strong;
-    border-radius: 4px;
+  .error {
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   .sent {
-    color: $brand;
-    font-size: 0.95rem;
-    display: inline-flex;
+    color: #27ae60;
+    display: flex;
     align-items: center;
     gap: 0.3rem;
   }
 }
 
-/* Visit us */
+/* Visit Card */
 .visit-card {
   .addr {
-    line-height: 1.5;
     font-style: italic;
     margin-bottom: 1rem;
-  }
-
-  .map-note {
-    font-size: 0.95rem;
-    color: $fg;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+    line-height: 1.5;
   }
 
   .map-wrap {
     width: 100%;
-    height: clamp(220px, 28vw, 350px); // responsive auto-height
+    height: clamp(220px, 28vw, 350px);
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba($fg, 0.08);
@@ -137,14 +123,15 @@
   .map-frame {
     width: 100%;
     height: 100%;
-    border: 0;
+    border: none;
   }
-}
 
-.personal-title {
-  margin-bottom: 1.5rem;
-  color: $brand;
-  font-size: 1.4rem;
+  .map-note {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: $fg;
+  }
 }
 
 /* Clergy */
@@ -158,12 +145,13 @@
   }
 
   .clergy-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   .clergy-member {
+    flex: 1 1 calc(50% - 1.5rem);
     background: rgba($brand-300, 0.08);
     padding: 1.2rem;
     border-radius: 4px;
@@ -177,14 +165,32 @@
       margin-top: 0.4rem;
       line-height: 1.55;
 
-      a {
-        color: $brand;
-        text-decoration: none;
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin: 0.25rem 0;
 
-        &:hover {
-          text-decoration: underline;
+        i {
+          color: $brand;
+          font-size: 1.1rem;
+        }
+
+        a {
+          color: $brand;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .clergy-member {
+      flex: 1 1 100%;
     }
   }
 }

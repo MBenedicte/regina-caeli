@@ -12,7 +12,7 @@
         <div class="caption">
             <h2 class="caption-text">
                 Välkommen till <br />
-                <span>“Burundiska och rwandiska mission”.</span>
+                <span>“Burundiska och Rwandiska mission”.</span>
             </h2>
             <button class="cta-btn" @click="openModal">
                 <i class="ri-calendar-line"></i>

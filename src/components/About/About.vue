@@ -14,32 +14,33 @@
                 <div class="intro-content">
                     <div class="text">
                         <p>
-                            Burundiska och Rwandiska Mission är en levande skola där den katolska
-                            tron och gemenskapen förmedlas på både
-                            <em>kirundi</em> och <em>kinyarwanda</em>. Vi är kallade att älska och
-                            tjäna som missionärer i de katolska församlingar där troende bor –
-                            och i världen.
+                            Burundiska och rwandiska mission är en skola där den katolska tron och gemenskap förmedlas
+                            på båda <em>kirundi</em> och <em>kinyarwanda</em> språk. Syftet är att älska och vara en
+                            missionär i de olika katolska församlingar de troende bor och även i världen.
                         </p>
 
                         <p>
-                            Det katolska stiftet är vårt hem och vår moder. Där föds vi på nytt
-                            genom vatten och den Helige Ande i dopet. Där får vi den heliga
-                            kommunionen med vår Herre Jesus Kristus – en nåd som förvandlar oss
-                            till en kärleksfull församling.
+                            Det katolska stiftet är vår hem, vår moder, det är den som föder och oss för andra gången
+                            i vatten och den Helige ande, i dopet. Det är den samma som förbereder och ger oss möjlighet
+                            till den heliga kommunionen med vår Herre Jesus Kristus, vilket förvandlar oss
+                            till en kärleksfull församling tack vare den heliga kommunionen.
                         </p>
 
                         <p>
-                            Genom konfirmationen sänds vi ut som missionärer, kallade att dela
-                            Guds kärlek och bjuda in alla till gemenskapen. Oavsett om vi kallas
-                            till ett liv helt ägnat åt Gud eller till att bilda familj, följer
-                            den katolska församlingen oss genom hela livet.
+                            Samma katolska församling skickar oss som missionärer genom konfirmation för att kalla alla
+                            till denna underbara gemenskap. Vare sig om man vill ägna sitt liv åt Gud eller bilda
+                            familj i äktenskap, så får vi välsignelsen av samma katolska församling. Den katolska
+                            församlingen är med oss under hela resgång av vårt liv, även vid slutet (isiga ry’abagwaye)
+                            eller vid begravning. Detta är vår tron och vår mission är att lära ut alla katolska
+                            burundier och rwandier i hela Sverige.
+
                         </p>
 
                         <p>
-                            Burundiska och Rwandiska Katolska Mission har sitt säte i Sala, men
-                            omfattar troende i hela Sverige. Alla katoliker som känner sig
-                            kallade att växa i tron är välkomna, under ledning av vår rektor
-                            Fader Ignace N. och diakon Godefroid N.
+                            Burundiska och rwandiska katolska mission har sitt fäste i Sala, men inkluderar alla
+                            katoliker i hela Sverige. Från Kiruna till Göteborg, välkomnas att troende som känner sig
+                            manade att dela och sprida Gudsbudskap och stärka vår tron under ledarskap av vår rektor
+                            fader Ignace Nkurunziza och tjänstgöring av en diakon, Godefroid Ndayikengurukiye.
                         </p>
                     </div>
                 </div>

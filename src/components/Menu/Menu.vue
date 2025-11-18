@@ -2,9 +2,9 @@
 <template>
     <div class="app-menu" :class="{ 'is-open': open }">
         <div class="menu-wrap">
-            <!-- Brand with logo -->
+            <!-- Updated Brand with image logo -->
             <a href="#home" class="brand" @click.prevent="scrollTo('#home')">
-                <i class="ri-community-line"></i>
+                <img src="@/assets/images/reginacaeli_logo.png" alt="Regina Caeli Logo" class="brand-logo" />
                 <span>Regina Caeli</span>
             </a>
 
@@ -16,15 +16,14 @@
             </nav>
 
             <!-- Mobile toggle -->
-            <button class="menu-toggle" type="button" @click="toggleMenu" :aria-expanded="open.toString()"
-                aria-controls="mobile-menu" aria-label="Växla huvudmeny">
+            <button class="menu-toggle" type="button" @click="toggleMenu">
                 <i v-if="!open" class="ri-menu-line"></i>
                 <i v-else class="ri-close-line"></i>
             </button>
         </div>
 
         <!-- Mobile drawer -->
-        <nav id="mobile-menu" class="drawer" v-show="open" aria-label="Mobilmeny">
+        <nav id="mobile-menu" class="drawer" v-show="open">
             <a href="#home" @click.prevent="scrollTo('#home')">
                 <i class="ri-home-5-line"></i>
                 <span>Hem</span>

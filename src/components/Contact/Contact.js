@@ -13,7 +13,7 @@ export default {
       sent: false,
       error: false,
       recaptchaToken: "",
-      siteKey: "6LdZkBAsAAAAAPZQZLWO7G7ptEKXjlJWmsf5RdO7",
+      siteKey: "6Leg5RAsAAAAANqL-kTB3c-TfzQ7d5vMYatrDD7z",
       mapSrc:
         "https://www.google.com/maps/d/embed?mid=1Byt88A8FJ6g3TF6rz65IhM55ZGfVjzY&ehbc=2E312F",
       clergy: [
@@ -53,11 +53,13 @@ export default {
       this.error = false;
 
       try {
-        // reCAPTCHA v3 token
         const token = await grecaptcha.execute(this.siteKey, { action: "submit" });
         this.recaptchaToken = token;
 
-        const formData = new FormData(this.$refs.contactForm);
+        const formData = new FormData();
+        formData.append("name", this.form.name);
+        formData.append("email", this.form.email);
+        formData.append("message", this.form.message);
         formData.append("g-recaptcha-response", token);
 
         const response = await fetch("https://formspree.io/f/xdkpqgeb", {
@@ -70,7 +72,6 @@ export default {
 
         this.sent = true;
         this.form = { name: "", email: "", message: "" };
-
         setTimeout(() => (this.sent = false), 4000);
       } catch (err) {
         this.error = true;

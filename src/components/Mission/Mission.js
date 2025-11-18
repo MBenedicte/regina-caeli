@@ -1,6 +1,5 @@
 export default {
   name: "Mission",
-
   data() {
     return {
       images: [
